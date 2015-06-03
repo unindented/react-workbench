@@ -1,0 +1,175 @@
+//
+// Tabs
+// =========================
+
+
+// Variables
+// -------------------------
+
+@tabs-width:                      200px;
+
+@tabs-header-bg:                  @brand-color;
+@tabs-header-height:              60px;
+@tabs-header-margin:              30px;
+
+@tabs-navigation-shadow:          1px 0 10px 0px fade(black, 25%);
+
+@tabs-target-padding-vertical:    15px;
+@tabs-target-padding-horizontal:  15px;
+
+@tabs-content-padding-vertical:   20px;
+@tabs-content-padding-horizontal: 30px;
+
+@tabs-level1-bg:                  #333;
+@tabs-level1-hover-bg:            darken(@tabs-level1-bg, 5%);
+@tabs-level1-color:               #eee;
+@tabs-level1-hover-color:         lighten(@tabs-level1-color, 15%);
+
+@tabs-level2-bg:                  #ddd;
+@tabs-level2-hover-bg:            darken(@tabs-level2-bg, 10%);
+@tabs-level2-color:               #666;
+@tabs-level2-hover-color:         darken(@tabs-level2-color, 15%);
+
+@tabs-level3-bg:                  #eee;
+@tabs-level3-hover-bg:            darken(@tabs-level3-bg, 10%);
+@tabs-level3-color:               #777;
+@tabs-level3-hover-color:         darken(@tabs-level3-color, 15%);
+
+
+// Container
+// -----------------------------
+
+.root {
+  display: table;
+}
+
+
+// Pusher
+// -----------------------------
+
+.pusher {
+  width: @tabs-width;
+}
+
+
+// Navigation
+// -----------------------------
+
+.navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  width: @tabs-width;
+  overflow: scroll;
+  background-color: @tabs-level1-bg;
+  box-shadow: @tabs-navigation-shadow;
+}
+
+.header {
+  display: block;
+  height: @tabs-header-height;
+  margin-bottom: @tabs-header-margin;
+  text-align: center;
+
+  &.hasLogo {
+    background-color: @tabs-header-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.target {
+  display: block;
+  padding: @tabs-target-padding-vertical @tabs-target-padding-horizontal;
+  font-weight: bold;
+  color: @tabs-level1-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s;
+  transition-property: color, background-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @tabs-level1-hover-color;
+    text-decoration: none;
+  }
+
+  &.isActive {
+    color: @tabs-level1-hover-color;
+    background-color: @tabs-level1-hover-bg;
+  }
+}
+
+// Panels
+// -----------------------------
+
+.panels {
+  display: table-cell;
+  width: 100%;
+}
+
+.panel {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  &.isLeaf {
+    padding: @tabs-content-padding-vertical @tabs-content-padding-horizontal;
+  }
+}
+
+// Nested tabs (level 2+)
+// -----------------------------
+
+.panel .navigation {
+  z-index: 3;
+  background-color: @tabs-level2-bg;
+
+  .target {
+    color: @tabs-level2-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @tabs-level2-hover-color;
+    }
+
+    &.isActive {
+      color: @tabs-level2-hover-color;
+      background-color: @tabs-level2-hover-bg;
+    }
+  }
+}
+
+// Nested tabs (level 3+)
+// -----------------------------
+
+.panel .panel .navigation {
+  z-index: 2;
+  background-color: @tabs-level3-bg;
+
+  .target {
+    color: @tabs-level3-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @tabs-level3-hover-color;
+    }
+
+    &.isActive {
+      color: @tabs-level3-hover-color;
+      background-color: @tabs-level3-hover-bg;
+    }
+  }
+}

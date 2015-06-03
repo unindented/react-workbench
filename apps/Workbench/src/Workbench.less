@@ -1,0 +1,29 @@
+//
+// Workbench app
+// =========================
+
+
+// Styles
+// -------------------------
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+  background-image:
+    linear-gradient(45deg, @checkerboard-color 25%, transparent 25%, transparent 75%, @checkerboard-color 75%, @checkerboard-color),
+    linear-gradient(-45deg, @checkerboard-color 25%, transparent 25%, transparent 75%, @checkerboard-color 75%, @checkerboard-color);
+  background-size: @checkerboard-size @checkerboard-size;
+}
+
+.root {
+  box-sizing: border-box;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
