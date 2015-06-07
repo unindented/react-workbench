@@ -52,20 +52,26 @@ export default React.createClass({
   _getHeader() {
     let {logo} = this.props;
 
-    let className = `${styles.header} ${logo ? styles.hasLogo : ''}`;
-    let background = {
+    let headerClassName = `${styles.header} ${logo ? styles.hasLogo : ''}`;
+    let headerBackground = {
       'backgroundImage': logo ? `url(${logo})` : null
     };
 
     return (
-      <header className={className} style={background} />
+      <header className={headerClassName} style={headerBackground} />
     );
   },
 
   _getPanels() {
+    let cases = this.props.items.filter(({cases}) => cases != null);
+    let isLeaf = (cases.length === 0);
+
+    let panelsClassName = styles.panels;
+    let panelClassName = `${styles.panel} ${isLeaf ? styles.isLeaf : ''}`;
+
     return (
-      <div className={styles.panels}>
-        <div className={styles.panel}>
+      <div className={panelsClassName}>
+        <div className={panelClassName}>
           <RouteHandler />
         </div>
       </div>
