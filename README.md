@@ -1,4 +1,4 @@
-# React Workbench [![Version](https://img.shields.io/npm/v/react-workbench.svg)](https://www.npmjs.com/package/react-workbench) [![Build Status](https://img.shields.io/travis/unindented/react-workbench.svg)](http://travis-ci.org/unindented/react-workbench) [![Dependency Status](https://img.shields.io/gemnasium/unindented/react-workbench.svg)](https://gemnasium.com/unindented/react-workbench) [![Coverage Status](https://img.shields.io/coveralls/unindented/react-workbench.svg)](https://coveralls.io/r/unindented/react-workbench) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
+# React Workbench [![Version](https://img.shields.io/npm/v/react-workbench.svg)](https://www.npmjs.com/package/react-workbench) [![Build Status](https://img.shields.io/travis/unindented/react-workbench.svg)](http://travis-ci.org/unindented/react-workbench) [![Coverage Status](https://img.shields.io/coveralls/unindented/react-workbench.svg)](https://coveralls.io/r/unindented/react-workbench) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
 
 Tool to help you interact with your React components in isolation.
 
